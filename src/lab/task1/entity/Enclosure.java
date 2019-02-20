@@ -1,9 +1,13 @@
+package lab.task1.entity;
+
+import lab.task1.enumonly.EnclosureState;
+
 public class Enclosure {
 
     private int number;
-    private Clean clean;
+    private EnclosureState clean;
 
-    public Enclosure(int number, Clean clean) {
+    public Enclosure(int number, EnclosureState clean) {
         this.number = number;
         this.clean = clean;
     }
@@ -12,7 +16,7 @@ public class Enclosure {
         return number;
     }
 
-    public void setClean(Clean clean) {
+    public void setClean(EnclosureState clean) {
         this.clean = clean;
     }
 }

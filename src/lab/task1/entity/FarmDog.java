@@ -1,19 +1,28 @@
+package lab.task1.entity;
+
+import lab.task1.enumonly.DogHealth;
+import lab.task1.enumonly.DogHunger;
+import lab.task1.enumonly.DogTraining;
+import lab.task1.enumonly.EnclosureState;
+
 import java.util.ArrayList;
 
 public class FarmDog {
 
     public void createModelFarmDog() {
-        Dog rex = new AdultDog(1, "Rex", 2, true, true, true);
-        Dog tuzik = new Puppy(2, "Tuzik", 0.8, false, true, false);
-        Dog totoro = new AdultDog(3, "Totoro", 7, false, true, true);
-        Dog polkan = new OldDog(4, "Polkan", 8, false, true, true);
-        Dog belka = new AdultDog(5, "Belka", 3, false, true, true);
+        Dog strelka = new Puppy.Builder().build(6, "Strelka", 0.5);
+        Dog rex = new AdultDog(1, "Rex", 2, DogHealth.SICK, DogHunger.HUNGRY, DogTraining.UNTRAINED);
+        Dog tuzik = new Puppy.Builder().build(2, "Tuzik", 0.8);
+        Dog totoro = new AdultDog.Builder().build(3, "Totoro", 7);
+        Dog polkan = new OldDog.Builder().build(4, "Polkan", 8);
+        Dog belka = new AdultDog.Builder().build(5, "Belka", 3);
 
-        Enclosure one = new Enclosure(1, Clean.DIRTY);
-        Enclosure two = new Enclosure(2, Clean.DIRTY);
-        Enclosure three = new Enclosure(3, Clean.DIRTY);
-        Enclosure four = new Enclosure(4, Clean.DIRTY);
-        Enclosure five = new Enclosure(5, Clean.DIRTY);
+        Enclosure one = new Enclosure(1, EnclosureState.DIRTY);
+        Enclosure two = new Enclosure(2, EnclosureState.DIRTY);
+        Enclosure three = new Enclosure(3, EnclosureState.DIRTY);
+        Enclosure four = new Enclosure(4, EnclosureState.DIRTY);
+        Enclosure five = new Enclosure(5, EnclosureState.DIRTY);
+        Enclosure six = new Enclosure(6, EnclosureState.DIRTY);
 
         Veterinarian doctor = new Veterinarian("Jack", 35);
         ServiceStuff worker = new ServiceStuff("Smith", 17);
@@ -24,6 +33,7 @@ public class FarmDog {
         dogs.add(totoro);
         dogs.add(polkan);
         dogs.add(belka);
+        dogs.add(strelka);
 
         ArrayList<Enclosure> enclosures = new ArrayList<>();
         enclosures.add(one);
@@ -31,6 +41,7 @@ public class FarmDog {
         enclosures.add(three);
         enclosures.add(four);
         enclosures.add(five);
+        enclosures.add(six);
 
         for (Dog dog : dogs) {
             worker.feed(dog);

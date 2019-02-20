@@ -1,3 +1,7 @@
+package lab.task1.entity;
+
+import lab.task1.enumonly.EnclosureState;
+
 public class ServiceStuff {
 
     private String name;
@@ -13,8 +17,8 @@ public class ServiceStuff {
     }
 
     public void cleanEnclosure(Enclosure enclosure) {
-        enclosure.setClean(Clean.CLEAN);
-        System.out.println("Вальер " + enclosure.getNumber() + " чист");
+        enclosure.setClean(EnclosureState.CLEAN);
+        System.out.println("Enclosure " + enclosure.getNumber() + " is clean!");
     }
 
     public void takeDogToTrainingGround(Dog dog) {
